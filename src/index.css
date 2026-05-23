@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fallback default theme values */
+    --font-heading: 'Boogaloo', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-mono: 'Courier Prime', monospace;
+
+    --color-bg: #F5F5F0;
+    --color-primary: #5BB8D4;
+    --color-accent: #D93B3B;
+    --color-text: #4A2C1A;
+    --color-card: #FDF6E3;
+    
+    --border-radius-card: 24px;
+    --box-shadow-card: 4px 4px 0px #4A2C1A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+  }
+
+  /* Global visual noise overlay for premium organic feel */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* Micro-interactions: Scale lift on buttons */
+  .btn-hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+  }
+  .btn-hover-lift:hover {
+    transform: scale(1.03) translateY(-2px);
+  }
+
+  /* Link lifts */
+  .link-hover-lift {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .link-hover-lift:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+}
+
+/* Custom candy/stripe animations for backgrounds */
+.candy-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 15px,
+    rgba(255, 255, 255, 0.15) 15px,
+    rgba(255, 255, 255, 0.15) 30px
+  );
+}
+
+.cereal-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(200, 223, 240, 0.1) 10px,
+    rgba(200, 223, 240, 0.1) 20px
+  );
+}
+
+.popcorn-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-accent) 0px,
+    var(--color-accent) 20px,
+    var(--color-bg) 20px,
+    var(--color-bg) 40px
+  );
+}
+
+/* Custom swirl animations */
+.swirl-overlay {
+  background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.03) 70%);
+}
