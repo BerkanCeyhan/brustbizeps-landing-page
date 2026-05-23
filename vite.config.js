@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages serves at /<repo>/ → base muss matchen, sonst 404 auf Assets.
+// Custom Domain: try.brustbizeps.de
+// Die App lebt unter /aktion/1/ → CNAME + post-build restructure in der GH Actions workflow.
 export default defineConfig({
-  base: '/brustbizeps-landing-page/',
+  base: '/aktion/1/',
   plugins: [react()],
 })
