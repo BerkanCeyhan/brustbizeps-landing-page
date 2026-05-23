@@ -129,10 +129,10 @@ export default function Hero({ activeTheme, onSelectFlavor, themesList }) {
                 boxShadow: activeTheme.overrides.shadowStyle,
                 border: activeTheme.overrides.borderStyle,
               }}
-              className="btn-hover-lift px-8 py-4 font-heading text-lg tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3"
+              className="btn-hover-lift px-6 py-3.5 font-heading text-base tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2.5"
             >
-              <Flame className="w-5 h-5 fill-current animate-bounce" />
-              <span>JETZT FÜR 22,95 € SICHERN</span>
+              <Flame className="w-4 h-4 fill-current" />
+              <span>Jetzt bestellen</span>
             </button>
 
             {/* Versand-Hinweis (kein Fake-Urgency) */}

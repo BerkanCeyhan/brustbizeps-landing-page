@@ -1,28 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { Star, ShieldCheck } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function SocialProof({ activeTheme }) {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.testimonial-card', {
-        x: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-        }
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
 
   const testimonials = [
     {
@@ -49,9 +28,8 @@ export default function SocialProof({ activeTheme }) {
   ];
 
   return (
-    <section 
+    <section
       id="testimonials"
-      ref={containerRef}
       className="py-20 px-6 md:px-12 w-full transition-colors duration-500"
       style={{ backgroundColor: activeTheme.colors.card }}
     >
@@ -84,7 +62,7 @@ export default function SocialProof({ activeTheme }) {
                 boxShadow: activeTheme.overrides.shadowStyle,
                 backgroundColor: activeTheme.colors.bg,
               }}
-              className="testimonial-card p-6 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:scale-105"
+              className="testimonial-card p-6 flex flex-col justify-between relative overflow-hidden"
             >
               <div>
                 {/* Review Stars & Verified Badge */}

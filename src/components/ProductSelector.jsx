@@ -152,11 +152,11 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
               </div>
             </div>
 
-            {/* Quantities stepper & pricing indicators */}
-            <div className="w-full flex flex-wrap gap-6 items-end justify-between border-t border-b border-stone-200/50 py-6 mb-4">
+            {/* Menge + Preis — eine Zeile, kein Wrap auch auf Mobile */}
+            <div className="w-full flex items-center justify-between gap-4 border-t border-b border-stone-200/50 py-5 mb-3">
 
-              <div>
-                <label className="font-mono text-xs uppercase tracking-widest opacity-60 block mb-2">
+              <div className="flex flex-col gap-2 min-w-0">
+                <label className="font-mono text-[10px] uppercase tracking-widest opacity-60">
                   2. Menge
                 </label>
                 <div
@@ -164,47 +164,48 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
                     borderRadius: activeTheme.overrides.borderRadiusButton,
                     border: activeTheme.overrides.borderStyle,
                   }}
-                  className="flex items-center bg-white overflow-hidden w-32"
+                  className="flex items-center bg-white overflow-hidden w-28"
                 >
                   <button
                     onClick={decreaseQty}
                     aria-label="Menge verringern"
-                    className="p-3 hover:bg-stone-100 transition-colors"
+                    className="px-2.5 py-2 hover:bg-stone-100 transition-colors"
                   >
-                    <Minus className="w-4 h-4 text-stone-600" />
+                    <Minus className="w-3.5 h-3.5 text-stone-600" />
                   </button>
-                  <span className="font-mono font-bold text-center flex-1 tabular-nums">{qty}</span>
+                  <span className="font-mono font-bold text-center flex-1 tabular-nums text-sm">{qty}</span>
                   <button
                     onClick={increaseQty}
                     aria-label="Menge erhöhen"
-                    className="p-3 hover:bg-stone-100 transition-colors"
+                    className="px-2.5 py-2 hover:bg-stone-100 transition-colors"
                   >
-                    <Plus className="w-4 h-4 text-stone-600" />
+                    <Plus className="w-3.5 h-3.5 text-stone-600" />
                   </button>
-                </div>
-                {/* Mengenrabatt-Hinweis */}
-                <div className="font-mono text-[10px] opacity-70 mt-2 leading-snug">
-                  {qty >= 3
-                    ? <span style={{ color: activeTheme.colors.accent }}>Bestpreis: 19,95&nbsp;€ / Stück</span>
-                    : qty === 2
-                      ? <span>Spar-Tipp: ab 3&times; nur 19,95&nbsp;€ / Stück</span>
-                      : <span>Ab 2&times; nur 21,95&nbsp;€ / Stück</span>}
                 </div>
               </div>
 
-              {/* Pricing Display */}
+              {/* Pricing — kompakt, einzeilig */}
               <div className="text-right">
-                <span className="font-mono text-xs line-through opacity-50 block tabular-nums">
+                <span className="font-mono text-[11px] line-through opacity-50 block tabular-nums leading-none mb-1">
                   {eu(compareTotal)} €
                 </span>
-                <span className="font-heading text-4xl font-bold block tabular-nums" style={{ color: activeTheme.colors.accent }}>
+                <span className="font-heading text-3xl font-bold block tabular-nums leading-none" style={{ color: activeTheme.colors.accent }}>
                   {eu(total)} €
                 </span>
                 <span className="font-mono text-[10px] opacity-60 block mt-1 tabular-nums">
-                  Entspricht {eu(servingPrice)} € pro Shake
+                  {eu(servingPrice)} € pro Shake
                 </span>
               </div>
 
+            </div>
+
+            {/* Mengenrabatt-Hinweis als dünne Zeile */}
+            <div className="w-full font-mono text-[10px] opacity-70 mb-4 leading-snug">
+              {qty >= 3
+                ? <span style={{ color: activeTheme.colors.accent }}>Bestpreis aktiv: 19,95&nbsp;€ pro Stück</span>
+                : qty === 2
+                  ? <span>Spar-Tipp: ab 3&times; nur 19,95&nbsp;€ pro Stück</span>
+                  : <span>Ab 2&times; nur 21,95&nbsp;€ pro Stück</span>}
             </div>
 
             {/* Gratis-Versand Fortschritt */}
@@ -238,10 +239,10 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
                 boxShadow: activeTheme.overrides.shadowStyle,
                 border: activeTheme.overrides.borderStyle,
               }}
-              className="btn-hover-lift w-full py-5 font-heading text-lg sm:text-xl tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3 mb-6"
+              className="btn-hover-lift w-full py-4 font-heading text-base sm:text-lg tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2.5 mb-6"
             >
               <ShoppingCart className="w-5 h-5 fill-current" />
-              <span className="tabular-nums">JETZT FÜR {eu(total)} € BESTELLEN</span>
+              <span>Jetzt bestellen</span>
             </button>
 
             {/* Trust Badges — Versand zuerst, das ist die häufigste Kaufbarriere */}
@@ -252,7 +253,7 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
               </div>
               <div className="flex flex-col items-center text-center gap-1">
                 <RefreshCw className="w-5 h-5" style={{ color: activeTheme.colors.primary }} />
-                <span className="text-[10px] font-mono leading-tight uppercase opacity-80">30 Tage Rückgabe</span>
+                <span className="text-[10px] font-mono leading-tight uppercase opacity-80">14 Tage Rückgabe</span>
               </div>
               <div className="flex flex-col items-center text-center gap-1">
                 <ShieldCheck className="w-5 h-5" style={{ color: activeTheme.colors.primary }} />

@@ -8,7 +8,7 @@ export default function Footer({ activeTheme }) {
         backgroundColor: activeTheme.colors.text,
         color: activeTheme.colors.bg,
       }}
-      className="pt-16 pb-10 px-6 md:px-12 w-full rounded-t-[3rem] transition-colors duration-500 overflow-hidden relative"
+      className="pt-16 pb-10 px-6 md:px-12 w-full transition-colors duration-500 overflow-hidden relative"
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 text-center">
 
