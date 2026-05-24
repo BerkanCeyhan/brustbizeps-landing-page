@@ -85,11 +85,11 @@ export default function Hero({ activeTheme, onSelectFlavor, themesList }) {
           <h1
             ref={addToElementsRef}
             style={{ color: activeTheme.colors.text }}
-            className="font-heading text-4xl sm:text-5xl lg:text-7xl leading-none mb-6 tracking-tight flex flex-col"
+            className="font-heading text-5xl sm:text-6xl lg:text-8xl leading-none mb-6 tracking-tight flex flex-col"
           >
             <span>PREMIUM WHEY PROTEIN</span>
             <span
-              className="text-3xl sm:text-4xl lg:text-5xl font-normal italic mt-2"
+              className="text-4xl sm:text-5xl lg:text-6xl font-normal italic mt-2"
               style={{ fontFamily: activeTheme.fonts.heading.includes('Boogaloo') ? "'Lobster Two', serif" : activeTheme.fonts.heading.includes('Pacifico') ? "'Playfair Display', serif" : activeTheme.fonts.heading.includes('Righteous') ? "'Source Serif 4', serif" : 'inherit' }}
             >
               für die Hälfte vom Original.
@@ -102,17 +102,17 @@ export default function Hero({ activeTheme, onSelectFlavor, themesList }) {
             className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6 font-mono text-[11px] uppercase tracking-widest"
             style={{ color: activeTheme.colors.text }}
           >
-            <span><span className="font-bold text-base font-heading not-italic mr-1.5">8.400+</span>Käufer</span>
+            <span><span className="font-bold text-lg font-heading not-italic mr-1.5">8.400+</span>Käufer</span>
             <span className="opacity-30">·</span>
-            <span><span className="font-bold text-base font-heading not-italic mr-1.5">4,9/5</span>Sterne</span>
+            <span><span className="font-bold text-lg font-heading not-italic mr-1.5">4,9/5</span>Sterne</span>
             <span className="opacity-30">·</span>
-            <span><span className="font-bold text-base font-heading not-italic mr-1.5">27 g</span>Eiweiß</span>
+            <span><span className="font-bold text-lg font-heading not-italic mr-1.5">27 g</span>Eiweiß</span>
           </div>
 
           {/* Core Avatar Promise */}
           <p
             ref={addToElementsRef}
-            className="text-lg md:text-xl opacity-80 max-w-xl mb-8 leading-relaxed font-body"
+            className="text-xl md:text-2xl opacity-80 max-w-xl mb-8 leading-relaxed font-body"
             style={{ color: activeTheme.colors.text }}
           >
             <span className="font-bold" style={{ color: activeTheme.colors.accent }}>22,95 €</span> statt <span className="line-through opacity-70">42,95 €</span>. Voll filtriertes Molkenprotein, cremig löslich, in 5 Geschmacksrichtungen, die wirklich schmecken. Über 8.400 Athleten kaufen bereits regelmäßig nach.

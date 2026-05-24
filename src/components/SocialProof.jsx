@@ -44,7 +44,7 @@ export default function SocialProof({ activeTheme }) {
             Über 8.400 Bewertungen
           </span>
           <h2
-            className="font-heading text-3xl sm:text-5xl leading-tight"
+            className="font-heading text-4xl sm:text-6xl leading-tight"
             style={{ color: activeTheme.colors.text }}
           >
             4,9 von 5 Sternen. Hier ist, warum.
@@ -80,7 +80,7 @@ export default function SocialProof({ activeTheme }) {
 
                 {/* Quote */}
                 <p 
-                  className="text-base italic leading-relaxed mb-6 font-body"
+                  className="text-lg italic leading-relaxed mb-6 font-body"
                   style={{ color: activeTheme.colors.text }}
                 >
                   "{t.quote}"
@@ -90,7 +90,7 @@ export default function SocialProof({ activeTheme }) {
               {/* User Identity Footer */}
               <div className="flex justify-between items-end border-t border-stone-200/20 pt-4">
                 <div>
-                  <h4 className="font-heading text-lg leading-none" style={{ color: activeTheme.colors.text }}>
+                  <h4 className="font-heading text-xl leading-none" style={{ color: activeTheme.colors.text }}>
                     {t.name}
                   </h4>
                   <p className="text-xs opacity-60 mt-1 font-body">

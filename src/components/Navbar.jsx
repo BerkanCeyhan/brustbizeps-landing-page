@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo_bg.png';
 
 function useCountdown() {
   const getSecondsUntilMidnight = () => {

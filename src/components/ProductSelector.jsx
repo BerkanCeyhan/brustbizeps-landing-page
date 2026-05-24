@@ -58,7 +58,7 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
             Dein Shake in 10 Sekunden
           </span>
           <h2
-            className="font-heading text-3xl sm:text-5xl leading-tight"
+            className="font-heading text-4xl sm:text-6xl leading-tight"
             style={{ color: activeTheme.colors.text }}
           >
             Geschmack wählen, Menge wählen, fertig.
@@ -109,7 +109,7 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
 
             {/* Produkt-USP (bleibt konstant über alle Flavors) */}
             <p
-              className="mb-6 text-sm md:text-base leading-relaxed opacity-80"
+              className="mb-6 text-base md:text-lg leading-relaxed opacity-80"
               style={{ color: activeTheme.colors.text }}
             >
               27&nbsp;g Eiweiß pro Portion. Cremig löslich. Bestellt von 8.400+ Athleten.
@@ -131,19 +131,28 @@ export default function ProductSelector({ activeTheme, onSelectFlavor, themesLis
                       style={{
                         borderRadius: activeTheme.overrides.borderRadiusButton,
                         border: isActive ? `2px solid ${activeTheme.colors.text}` : `1px solid rgba(0,0,0,0.15)`,
-                        backgroundColor: isActive ? activeTheme.colors.card : 'transparent',
                         color: activeTheme.colors.text,
+                        backgroundImage: fl.bgImage ? `url(${fl.bgImage})` : 'none',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        position: 'relative',
+                        overflow: 'hidden',
                       }}
-                      className="px-4 py-3 flex items-center justify-between text-sm font-semibold transition-all duration-300 hover:bg-stone-50"
+                      className="px-4 py-3 flex items-center justify-between text-sm font-semibold transition-all duration-300"
                     >
-                      <span className="flex items-center gap-2">
+                      {/* Overlay for text readability */}
+                      <div
+                        className="absolute inset-0 transition-colors duration-300"
+                        style={{ backgroundColor: isActive ? `${activeTheme.colors.card}80  ` : `${activeTheme.colors.bg}bb` }}
+                      />
+                      <span className="relative flex items-center gap-2">
                         <span>{fl.emoji}</span>
                         <span>{fl.name}</span>
                       </span>
                       {isActive && (
                         <span
                           style={{ backgroundColor: activeTheme.colors.accent }}
-                          className="w-2.5 h-2.5 rounded-full"
+                          className="relative w-2.5 h-2.5 rounded-full flex-shrink-0"
                         />
                       )}
                     </button>

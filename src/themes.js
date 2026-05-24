@@ -1,4 +1,6 @@
 // Brand aesthetics configuration for BrustBizeps Whey Protein
+import { BACKGROUNDS } from './backgrounds.js';
+
 export const FLAVOR_THEMES = {
   ice_cream_sandwich: {
     name: "Eis Cream Sandwich",
@@ -31,7 +33,8 @@ export const FLAVOR_THEMES = {
       objection1: "Schmeckt absolut wie echtes Softeis vom Strand. Keine Spur von künstlichem Nachgeschmack.",
       objection2: "Dank Ultra-Filtration löst sich das Pulver in 3 Sekunden klumpenfrei in Wasser oder Milch.",
       objection3: "Laktosearm und mit extra Verdauungsenzymen für absolute Magenverträglichkeit."
-    }
+    },
+    bgImage: BACKGROUNDS.ice_cream_sandwich ?? null,
   },
   cereal_milk: {
     name: "Cereal Milk",
@@ -64,7 +67,8 @@ export const FLAVOR_THEMES = {
       objection1: "Sanft und cremig, wie ein milchiges Frühstücks-Dessert. Null sandiges Gefühl.",
       objection2: "Optimierte Löslichkeit, entwickelt speziell für Shaker und Löffelrühren.",
       objection3: "Hypoallergenes Proteinprofil, leicht verdaulich und ideal für jeden Tag."
-    }
+    },
+    bgImage: BACKGROUNDS.cereal_milk ?? null,
   },
   glazed_cinnamon_roll: {
     name: "Glazed Cinnamon Roll",
@@ -97,7 +101,8 @@ export const FLAVOR_THEMES = {
       objection1: "Sinnliche Zimtnote kombiniert mit satter Süße. Schmeckt wie frisch gebacken.",
       objection2: "Erstklassige Löslichkeit ohne Rückstände. Zieht keine Klumpen im Shaker.",
       objection3: "Schonend gefiltert, extrem magenschonend und frei von Verdauungsproblemen."
-    }
+    },
+    bgImage: BACKGROUNDS.glazed_cinnamon_roll ?? null,
   },
   caramel_popcorn: {
     name: "Caramel Popcorn",
@@ -130,7 +135,8 @@ export const FLAVOR_THEMES = {
       objection1: "Der süß-salzige Kontrast schmeckt unschlagbar aufregend. Keine künstlichen Süßstoffe spürbar.",
       objection2: "Surgical Instantization sorgt für rückstandsloses Auflösen in jeder Flüssigkeit.",
       objection3: "Hohe biologische Wertigkeit garantiert schnelle Absorption ohne Völlegefühl."
-    }
+    },
+    bgImage: BACKGROUNDS.caramel_popcorn ?? null,
   },
   chocolate_milkshake: {
     name: "Chocolate Milkshake",
@@ -163,6 +169,7 @@ export const FLAVOR_THEMES = {
       objection1: "Tiefer, satter Schokoladengeschmack wie ein echter 1950s Diner Milkshake. Himmlisch cremig.",
       objection2: "Exzellente Dispersionskraft. Einmal schütteln und fertig ist das flüssige Gold.",
       objection3: "Inklusive Laktase-Enzymen für 100% beschwerdefreien Genuss nach jedem Training."
-    }
+    },
+    bgImage: BACKGROUNDS.chocolate_milkshake ?? null,
   }
 };
